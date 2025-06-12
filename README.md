@@ -75,7 +75,7 @@ If your robot expects `geometry_msgs/msg/TwistStamped` instead of `Twist`, creat
 > It converts messages from `teleop_twist_keyboard` (`Twist`) to `TwistStamped`.
 
 
-## 6. Unreliable Image Feed or Dropped Messages
+## 6. Resolving Image Feed Issues with Uncompressed Topics
 
 ### 6.1. Reduce IP Fragment Timeout
 
@@ -182,3 +182,7 @@ These fixes optimize Husarnet VPN and ROS 2 performance by ensuring:
 * Correct peer-to-peer routing
 * Compatibility between message types
 * Improved reliability of large data streams
+
+**Source**: DDS Middleware and Network Tuning – Stereolabs
+[https://www.stereolabs.com/docs/ros/networking/](https://www.stereolabs.com/docs/ros2/dds_and_network_tuning/)
+
