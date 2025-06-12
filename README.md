@@ -1,17 +1,27 @@
-# 🛠️ Husarnet VPN ROS 2 Connectivity & Performance Troubleshooting Guide
+# Team Shunya – Husarnet VPN ROS 2 Connectivity & Performance Troubleshooting Guide
 
 This guide documents common connectivity issues and performance bottlenecks encountered during ROS 2 networking over **Husarnet VPN**, especially during remote testing and robot teleoperation. It also provides **tested fixes** for each problem.
 
 ---
 
-## 📡 Table of Contents
+## Recommended Setup Before Troubleshooting
+
+Before diving into connectivity issues, make sure you've correctly configured the **Fast DDS Discovery Server**, which is essential for ROS 2 communication over VPN.
+
+**Guide:** [Fast DDS Discovery Server Setup with Husarnet](https://husarnet.com/docs/ros2/ros-discovery-server-env/)
+
+This setup ensures that nodes can discover each other reliably across remote systems connected via Husarnet.
+
+---
+
+##  Table of Contents
 
 * [1. Husarnet Tunnel Instead of Direct Peer-to-Peer](#1-husarnet-tunnel-instead-of-direct-peer-to-peer)
 * [2. Husarnet Join Hangs or Fails](#2-husarnet-join-hangs-or-fails)
 * [3. Topics Not Visible After VPN & DDS Setup](#3-topics-not-visible-after-vpn--dds-setup)
 * [4. UFW Firewall Restrictions](#4-ufw-firewall-restrictions)
 * [5. Twist vs TwistStamped Message Mismatch](#5-twist-vs-twiststamped-message-mismatch)
-* [6. Unreliable Image Feed or Dropped Messages](#6-unreliable-image-feed-or-dropped-messages)
+* [6. Resolving Image Feed Issues with Uncompressed Topics](#6-resolving-image-feed-issues-with-uncompressed-topics)
 
   * [6.1. Reduce IP Fragment Timeout](#61-reduce-ip-fragment-timeout)
   * [6.2. Increase IP Fragment Memory Threshold](#62-increase-ip-fragment-memory-threshold)
