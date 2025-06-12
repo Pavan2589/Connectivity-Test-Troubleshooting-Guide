@@ -183,6 +183,12 @@ These fixes optimize Husarnet VPN and ROS 2 performance by ensuring:
 * Compatibility between message types
 * Improved reliability of large data streams
 
-**Source**: DDS Middleware and Network Tuning – Stereolabs
-[https://www.stereolabs.com/docs/ros/networking/](https://www.stereolabs.com/docs/ros2/dds_and_network_tuning/)
+**Sources**:
+DDS Middleware and Network Tuning – Stereolabs
+[https://www.stereolabs.com/docs/ros/networking/](https://www.stereolabs.com/docs/ros/networking/)
+
+Husarnet Troubleshooting Guide
+[https://husarnet.com/docs/troubleshooting-guide/](https://husarnet.com/docs/troubleshooting-guide/)
+
+
 
