@@ -75,7 +75,6 @@ sudo ufw status
 sudo ufw disable
 ```
 
-
 ## 5. Twist vs TwistStamped Message Mismatch
 
 If your robot expects `geometry_msgs/msg/TwistStamped` instead of `Twist`, create a **bridge node** to convert messages:
@@ -84,14 +83,21 @@ If your robot expects `geometry_msgs/msg/TwistStamped` instead of `Twist`, creat
 
 > It converts messages from `teleop_twist_keyboard` (`Twist`) to `TwistStamped`.
 
-
-## 6. Resolving Image Feed Issues with Uncompressed Topics
-
-### 6.1. Reduce IP Fragment Timeout
+### 🔧 Run Instructions
 
 ```bash
-sudo sysctl -w net.ipv4.ipfrag_time=3
+cd twist_bridge
+source install/setup.bash
+ros2 run twist_stamped_bridge twist_to_stamped
 ```
+
+In a separate terminal, run:
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cmd_vel_raw
+```
+
+---
 
 ### 6.2. Increase IP Fragment Memory Threshold
 
