@@ -216,16 +216,3 @@ Husarnet Troubleshooting Guide
 [https://husarnet.com/docs/troubleshooting-guide/](https://husarnet.com/docs/troubleshooting-guide/)
 
 
-
-Team Shunya - Connectivity Troubleshooting guide 
-
-We have documented the major error bugs  fixes which we faced during the process of connectivity test and have given a possible solution and also the source link for the following. As seen on community forum many teams asked on steering the robot with different message type 
-
-
-only one change to make in the 5th point i want to add instructions 
-
-cd twist_bridge
-source install/setup.bash
-ros2 run twist_stamped_bridge twist_to_stamped 
-
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cmd_vel_raw
