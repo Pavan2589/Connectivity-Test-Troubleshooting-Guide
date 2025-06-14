@@ -74,6 +74,7 @@ Check UFW status. It should be inactive:
 sudo ufw status
 sudo ufw disable
 ```
+---
 
 ## 5. Twist vs TwistStamped Message Mismatch
 
@@ -98,6 +99,14 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cm
 ```
 
 ---
+
+## 6. Resolving Image Feed Issues with Uncompressed Topics
+
+### 6.1. Reduce IP Fragment Timeout
+
+```bash
+sudo sysctl -w net.ipv4.ipfrag_time=3
+```
 
 ### 6.2. Increase IP Fragment Memory Threshold
 
@@ -208,3 +217,15 @@ Husarnet Troubleshooting Guide
 
 
 
+Team Shunya - Connectivity Troubleshooting guide 
+
+We have documented the major error bugs  fixes which we faced during the process of connectivity test and have given a possible solution and also the source link for the following. As seen on community forum many teams asked on steering the robot with different message type 
+
+
+only one change to make in the 5th point i want to add instructions 
+
+cd twist_bridge
+source install/setup.bash
+ros2 run twist_stamped_bridge twist_to_stamped 
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cmd_vel_raw
